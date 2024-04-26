@@ -1,8 +1,8 @@
 public class MyQueue<T> {
-    private final MyLinkedList<T> list;
+    private final MyArrayList<T> list;
 
     public MyQueue() {
-        list = new MyLinkedList<>();
+        list = new MyArrayList<>();
     }
 
     public void enqueue(T e) {
