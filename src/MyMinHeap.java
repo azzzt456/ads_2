@@ -10,6 +10,7 @@ public class MyMinHeap<T extends Comparable<T>> {
         upHeap();
     }
 
+    // Return the minimum element
     public T findMin() {
         if (isEmpty()) {
             throw new IllegalStateException("Heap is empty");
@@ -17,6 +18,7 @@ public class MyMinHeap<T extends Comparable<T>> {
         return list.get(0);
     }
 
+    // Delete and return the minimum element
     public T deleteMin() {
         if (isEmpty()) {
             throw new IllegalStateException("Heap is empty");
@@ -30,10 +32,12 @@ public class MyMinHeap<T extends Comparable<T>> {
         return min;
     }
 
+    // Return the number of elements in the heap
     public int size() {
         return list.size();
     }
 
+    // Check if the heap is empty
     public boolean isEmpty() {
         return list.isEmpty();
     }

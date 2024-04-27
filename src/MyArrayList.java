@@ -12,6 +12,7 @@ public class MyArrayList<T> implements MyList<T> {
         this.size = 0;
     }
 
+    // Add an element to the end of the list
     @Override
     public void add(T e) {
         if (size == elements.length) {
@@ -20,6 +21,7 @@ public class MyArrayList<T> implements MyList<T> {
         elements[size++] = e;
     }
 
+    // Add an element at a specific index
     @Override
     public void add(int index, T e) {
         if (index < 0 || index > size) {
@@ -35,6 +37,7 @@ public class MyArrayList<T> implements MyList<T> {
         size++;
     }
 
+    // Get the element at a specific index
     @Override
     public T get(int index) {
         if (index < 0 || index >= size) {
@@ -43,6 +46,7 @@ public class MyArrayList<T> implements MyList<T> {
         return elements[index];
     }
 
+    // Remove the element at a specific index and return it
     @Override
     public T remove(int index) {
         if (index < 0 || index >= size) {
@@ -57,6 +61,7 @@ public class MyArrayList<T> implements MyList<T> {
         return removedElement;
     }
 
+    // Remove the first occurrence of a specified element
     @Override
     public boolean remove(T e) {
         for (int i = 0; i < size; i++) {
