@@ -44,6 +44,7 @@ public class MyLinkedList<T> implements MyList<T> {
         size++;
     }
 
+    //Creates a new node and appends it to the end of the list.
     private void linkLast(T e) {
         final MyNode<T> l = tail;
         final MyNode<T> newNode = new MyNode<>(e, l, null);
@@ -55,6 +56,7 @@ public class MyLinkedList<T> implements MyList<T> {
         }
     }
 
+    //Creates a new node and inserts it before the specified succ node.
     private void linkBefore(T e, MyNode<T> succ) {
         final MyNode<T> pred = succ.prev;
         final MyNode<T> newNode = new MyNode<>(e, pred, succ);
@@ -66,6 +68,7 @@ public class MyLinkedList<T> implements MyList<T> {
         }
     }
 
+    //Returns the node at the specified index
     private MyNode<T> getNode(int index) {
         if (index < (size >> 1)) {
             MyNode<T> x = head;
@@ -82,6 +85,7 @@ public class MyLinkedList<T> implements MyList<T> {
         }
     }
 
+
     @Override
     public T get(int index) {
         if (index < 0 || index >= size) {
@@ -90,6 +94,7 @@ public class MyLinkedList<T> implements MyList<T> {
         return getNode(index).element;
     }
 
+    //Removes the node at the specified index
     @Override
     public T remove(int index) {
         if (index < 0 || index >= size) {
@@ -101,6 +106,7 @@ public class MyLinkedList<T> implements MyList<T> {
         return element;
     }
 
+    //Removes the specified x node from the list
     private void unlink(MyNode<T> x) {
         final MyNode<T> next = x.next;
         final MyNode<T> prev = x.prev;
@@ -123,6 +129,7 @@ public class MyLinkedList<T> implements MyList<T> {
         size--;
     }
 
+    //Removes the first occurrence of the element e
     @Override
     public boolean remove(T e) {
         for (MyNode<T> x = head; x != null; x = x.next) {
@@ -134,16 +141,19 @@ public class MyLinkedList<T> implements MyList<T> {
         return false;
     }
 
+    //Returns size of the list
     @Override
     public int size() {
         return size;
     }
 
+    //Checks if the list is empty
     @Override
     public boolean isEmpty() {
         return size == 0;
     }
 
+    //Checks if the list contains the element e
     @Override
     public boolean contains(T e) {
         for (MyNode<T> x = head; x != null; x = x.next) {
