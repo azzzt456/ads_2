@@ -23,11 +23,13 @@ public class MyLinkedList<T> implements MyList<T> {
         }
     }
 
+    //Adds the element e to the end of the list
     @Override
     public void add(T e) {
         add(size, e);
     }
 
+    //Adds the element e at the specified index in the list
     @Override
     public void add(int index, T e) {
         if (index < 0 || index > size) {
