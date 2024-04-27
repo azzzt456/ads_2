@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 public class MyMinHeap<T extends Comparable<T>> {
     private final MyArrayList<T> list;
 
@@ -5,6 +7,7 @@ public class MyMinHeap<T extends Comparable<T>> {
         list = new MyArrayList<>();
     }
 
+    // Insert an element into the heap
     public void insert(T element) {
         list.add(element);
         upHeap();
@@ -13,7 +16,7 @@ public class MyMinHeap<T extends Comparable<T>> {
     // Return the minimum element
     public T findMin() {
         if (isEmpty()) {
-            throw new IllegalStateException("Heap is empty");
+            throw new NoSuchElementException("Heap is empty");
         }
         return list.get(0);
     }
@@ -21,7 +24,7 @@ public class MyMinHeap<T extends Comparable<T>> {
     // Delete and return the minimum element
     public T deleteMin() {
         if (isEmpty()) {
-            throw new IllegalStateException("Heap is empty");
+            throw new NoSuchElementException("Heap is empty");
         }
         T min = findMin();
         T last = list.remove(list.size() - 1);
@@ -42,11 +45,12 @@ public class MyMinHeap<T extends Comparable<T>> {
         return list.isEmpty();
     }
 
+    // Check if the heap contains a specific element
     public boolean contains(T element) {
         return list.contains(element);
     }
 
-    private void upHeap() {
+    private void upHeap() { // Restore the heap property by moving a newly inserted element up
         int k = size() - 1;
         while (k > 0) {
             int p = (k - 1) / 2;
@@ -65,7 +69,7 @@ public class MyMinHeap<T extends Comparable<T>> {
         }
     }
 
-    private void downHeap() {
+    private void downHeap() { // Restore the heap property by moving a root element down
         int k = 0;
         int l = 2 * k + 1;
         while (l < size()) {

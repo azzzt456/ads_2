@@ -2,13 +2,13 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 public class MyArrayList<T> implements MyList<T> {
-    private static final int DEFAULT_CAPACITY = 10;
+    private static final int cap = 15;
     private T[] elements;
     private int size;
 
     @SuppressWarnings("unchecked")
     public MyArrayList() {
-        this.elements = (T[]) new Object[DEFAULT_CAPACITY];
+        this.elements = (T[]) new Object[cap];
         this.size = 0;
     }
 
@@ -52,13 +52,13 @@ public class MyArrayList<T> implements MyList<T> {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
-        T removedElement = elements[index];
+        T removed = elements[index];
         int numMoved = size - index - 1;
         if (numMoved > 0) {
             System.arraycopy(elements, index + 1, elements, index, numMoved);
         }
         elements[--size] = null;
-        return removedElement;
+        return removed;
     }
 
     // Remove the first occurrence of a specified element
@@ -114,16 +114,16 @@ public class MyArrayList<T> implements MyList<T> {
     @Override
     public Iterator<T> iterator() {
         return new Iterator<T>() {
-            private int currentIndex = 0;
+            private int curIndex = 0;
 
             @Override
             public boolean hasNext() {
-                return currentIndex < size && elements[currentIndex] != null;
+                return curIndex < size && elements[curIndex] != null;
             }
 
             @Override
             public T next() {
-                return elements[currentIndex++];
+                return elements[curIndex++];
             }
         };
     }

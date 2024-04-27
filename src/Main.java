@@ -10,7 +10,7 @@ public class Main {
         testMyMinHeap();
     }
 
-    private static void testMyArrayList() {
+    private static void testMyArrayList() { // Method to test MyArrayList
         System.out.println("Testing MyArrayList:");
         MyArrayList<Integer> list = new MyArrayList<>();
         list.add(5);
@@ -29,7 +29,7 @@ public class Main {
         System.out.println();
     }
 
-    private static void testMyLinkedList() {
+    private static void testMyLinkedList() { // Method to test MyLinkedList
         System.out.println("Testing MyLinkedList:");
         MyLinkedList<Integer> list = new MyLinkedList<>();
         list.add(5);
@@ -48,7 +48,7 @@ public class Main {
         System.out.println();
     }
 
-    private static void testMyStack() {
+    private static void testMyStack() {  // Method to test MyStack
         System.out.println("Testing MyStack:");
         MyStack<Integer> stack = new MyStack<>();
         stack.push(4);
@@ -64,7 +64,7 @@ public class Main {
         System.out.println();
     }
 
-    private static void testMyQueue() {
+    private static void testMyQueue() { // Method to test MyQueue
         System.out.println("Testing MyQueue:");
         MyQueue<Integer> queue = new MyQueue<>();
         queue.enqueue(4);
@@ -80,7 +80,7 @@ public class Main {
         System.out.println();
     }
 
-    private static void testMyMinHeap() {
+    private static void testMyMinHeap() { // Method to test MyMinHeap
         System.out.println("Testing MyMinHeap:");
         MyMinHeap<Integer> minHeap = new MyMinHeap<>();
         minHeap.insert(5);
